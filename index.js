@@ -33,4 +33,4 @@ app.get('/admin/update/:id', adminUpdate)
 app.post('/admin/update', adminUpdatePost)
 app.get('/admin/delete/:id', adminDelete)
 
-app.listen(port, () => console.log(`Shopping cart running on port ${port}!`))
+app.listen(port, () => console.log(`Running on port ${port}!`))
