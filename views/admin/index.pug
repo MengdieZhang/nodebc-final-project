@@ -1,0 +1,23 @@
+html
+  head
+      link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' integrity='sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh' crossorigin='anonymous')
+      link(rel="stylesheet", href="css/styles.css")
+
+  body
+    hr
+    br
+    .container
+      a.btn.btn-primary(href='/admin/create') Create
+      .row
+        .card-group
+          each product in products
+            .col
+              .card(style='width: 18rem;')
+                img.card-img-top(src=product.image alt=product.name)
+                .card-body
+                  h5.card-title=product.name
+                  p.card-text=product.description
+                  p.card-text Price: $#{product.price}
+                  p.text-muted Rating: #{product.rating}
+                  a.btn.btn-info(href='/admin/update/' + product.id) Update
+                  a.btn.btn-danger(href="/admin/delete/" + product.id) Delete
